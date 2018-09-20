@@ -36,7 +36,7 @@ function concatNames(names){
   newNames = names.map(name => {
     return `${name.firstName} ${name.lastName}`;
   })
-  
+
   return newNames;
 }
 
@@ -54,10 +54,15 @@ exports.numbersToStrings = numbersToStrings;
 
 // strings is an array of strings. sort them by length
 function sortByLength(strings){
-  strings.sort(function(a,b){
+  const stringsCopy = [...strings];
+  
+  stringsCopy.sort(function(a,b){
     return a.length - b.length;
   });
+  return stringsCopy;
 }
+
+exports.sortByLength = sortByLength; 
 
 // numbers is an array of numbers. Get last two numbers
 // from numbers

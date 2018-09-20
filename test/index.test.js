@@ -101,3 +101,27 @@ describe('numbersToStrings', function() {
     })
 
 })
+
+
+describe('sort by length', function() {
+    it('sort array of strings by length', function() {
+        const input = ['one','two','three','million','five'];
+        const expectedOutput = ['one','two','five','three','million'] ;
+        const result = functions.sortByLength(input);
+
+        expect(result).toEqual(expectedOutput);       
+    })
+
+    it('purity test', function() {
+        const input = ['one','two','three','million','five'];
+        const expectedInput =  ['one','two','three','million','five'];
+
+        const expectedOutput = ['one','two','five','three','million'] ;
+        const result = functions.sortByLength(input);
+
+        expect(result).toEqual(expectedOutput);
+        expect(input).toEqual(expectedInput);
+    
+    })
+
+})
