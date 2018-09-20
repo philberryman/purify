@@ -42,3 +42,43 @@ describe ('Absolute Numbers', function() {
     }) 
 })
 
+describe ('concatNames', function() {
+    it('concatinate first and last names - output array', function() {
+        const input = [
+            {firstName: 'Joe',
+            lastName: 'Blogs'}
+        ,
+            {firstName: 'Bill',
+            lastName: 'Withers'}    
+        ];
+        const expectedOutput= ['Joe Blogs','Bill Withers'];
+    
+        const result = functions.concatNames(input);
+        expect(result).toEqual(expectedOutput);
+    }) 
+    
+    it('tests for purity', function() {
+        const input = [
+            {firstName: 'Joe',
+            lastName: 'Blogs'}
+        ,
+            {firstName: 'Bill',
+            lastName: 'Withers'}    
+        ];
+        const expectedInput = [
+            {firstName: 'Joe',
+            lastName: 'Blogs'}
+        ,
+            {firstName: 'Bill',
+            lastName: 'Withers'}    
+        ];
+    
+        const expectedOutput= ['Joe Blogs','Bill Withers'];
+        const result = functions.concatNames(input);
+    
+        expect(result).toEqual(expectedOutput);
+        expect(input).toEqual(expectedInput);
+    }) 
+})
+
+

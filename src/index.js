@@ -33,11 +33,14 @@ exports.absolute = absolute;
 // concatenate first and last names and return
 // resulting array of names
 function concatNames(names){
-  for(var i = 0; i < names.length; i++){
-    names[i] = `${names[i].firstName} ${names[i].lastName}`;
-  }
-  return names;
+  newNames = names.map(name => {
+    return `${name.firstName} ${name.lastName}`;
+  })
+  
+  return newNames;
 }
+
+exports.concatNames = concatNames;
 
 // things is an array of numbers and strings. Convert
 // numbers in array to strings. For example 5 to "5"
