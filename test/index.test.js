@@ -21,4 +21,24 @@ describe ('Multiply', function() {
     }) 
 })
 
+describe ('Absolute Numbers', function() {
+    it('making numbers absolute', function() {
+        const input = [2,-2,2,-2,2];
+        const expectedOutput= [2,2,2,2,2];
+    
+        const result = functions.absolute(input);
+        expect(result).toEqual(expectedOutput);
+    }) 
+    
+    it('tests for purity', function() {
+        const input = [2,-2,2,-2,2];
+        const expectedInput = [2,-2,2,-2,2];
+    
+        const expectedOutput= [2,2,2,2,2];
+        const result = functions.absolute(input);
+    
+        expect(result).toEqual(expectedOutput);
+        expect(input).toEqual(expectedInput);
+    }) 
+})
 

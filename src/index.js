@@ -14,10 +14,17 @@ exports.multiply = multiply;
 // is an array of positive and negative numbers
 // make them all absolute numbers
 function absolute(numbers){
-  for(var i = 0; i < numbers.length; i++){
-    numbers[i] = +numbers[i];
-  }
+  const positiveNumbers = numbers.map(number => {
+    return Math.abs(number);
+  })
+  // STARTER CODE
+  // for(var i = 0; i < numbers.length; i++){
+  //   numbers[i] = +numbers[i];
+  // }
+  return positiveNumbers
 }
+exports.absolute = absolute;
+
 // names is an array of name of nameObjects
 // {
 //   firstName: 'Alan',
