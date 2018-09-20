@@ -44,11 +44,13 @@ exports.concatNames = concatNames;
 
 // things is an array of numbers and strings. Convert
 // numbers in array to strings. For example 5 to "5"
-function numbersToStrings(things){
-  for(var i = 0; i < things.length; i++){
-    things[i] = typeof things[i] === 'number' ? things[i]+'' : things[i];
-  }
+const numbersToStrings = things => {
+  const newThingsArray = things.map(thing => {
+    return thing = typeof thing === 'number' ? thing+'' : thing;
+  })
+  return newThingsArray;
 }
+exports.numbersToStrings = numbersToStrings;
 
 // strings is an array of strings. sort them by length
 function sortByLength(strings){

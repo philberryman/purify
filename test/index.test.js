@@ -81,4 +81,23 @@ describe ('concatNames', function() {
     }) 
 })
 
+describe('numbersToStrings', function() {
+    it('convert numbers in array to strings', function() {
+        const input = ['five', 5, 'six', 6];
+        const expectedOutput = ['five','5', 'six','6'] ;
+        const result = functions.numbersToStrings(input);
 
+        expect(result).toEqual(expectedOutput);
+    })
+    it('tests for purity', function() {
+        const input = ['five', 5, 'six', 6];
+        const expectedInput =  ['five', 5, 'six', 6];
+
+        const expectedOutput = ['five','5', 'six','6'] ;
+        const result = functions.numbersToStrings(input);
+    
+        expect(result).toEqual(expectedOutput);
+        expect(input).toEqual(expectedInput);
+    })
+
+})
